@@ -1,0 +1,55 @@
+import React from 'react'
+import "./index.css"
+
+function App() {
+  return (
+    <div>
+      <header> Language Toggle Application with Context API</header>
+    <div className='main'>
+     
+      <div className='lan1'><textarea></textarea></div>
+      
+    </div>
+    </div>
+  )
+}
+
+export default App
+************************************************
+***************************************************
+******Class based component**********************
+import React ,{ Component } from "react";
+
+
+
+export default class App extends Component{
+
+  constructor(){
+    super()
+    this.state={
+      count:0,
+      color:"red"
+    }
+  }
+
+  handleClick(){
+    this.setState({count:this.state.count+1})
+  }
+  colorChange(){
+    this.setState({color: this.state.color=="red"?"blue":"red"})
+
+  }
+
+
+
+
+  render(){
+    return(
+      <div>
+       <h1 style={{color:this.state.color}}>{this.state.count}</h1>
+       <button onClick={()=>this.handleClick()}>++</button>
+       <button onClick={()=>this.colorChange()}>{this.state.color}</button>
+      </div>
+    )
+  }
+}
